@@ -1,4 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
+import CepValidationForm from './ValidaCEP';
+
+
+function App() {
+  return (
+    <CepValidationForm/>
+  );
+}
+
+export default App;
+
+/*import './App.css';
+import CepValidationForm from './components/ValidaCEP';
+
+function App() {
+  return (		
+    <div className="App">
+      <header className="App-header">
+        
+        <CepValidationForm/>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+*/
+
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -22,4 +51,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; */
