@@ -9,7 +9,8 @@ function CepValidationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const regex = /^[0-9]{5}-?[0-9]{3}$/;
+    if(cep !== '' && cep.match(regex)) {
     axios
       .get(`https://viacep.com.br/ws/${cep}/json/`)
       .then((response) => {
@@ -25,6 +26,14 @@ function CepValidationForm() {
         setErro('Erro ao buscar o CEP!');
         setEndereco({});
       });
+    }else{
+      alert("Digite um cep no formato válido!");
+      var cepEditText = document.getElementById("cep");
+      cepEditText.value = "";
+      
+    }
+
+
   };
 
   return (
@@ -42,7 +51,7 @@ function CepValidationForm() {
             onChange={(e) => setCep(e.target.value)}
             className="form-control"
             placeholder="Digite o CEP"
-            required
+            
           />
         </div>
         <button type="submit" className="btn btn-primary">
